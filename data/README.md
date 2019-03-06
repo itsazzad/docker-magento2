@@ -1,4 +1,4 @@
-# meanbee/magento2-data
+# /magento2-data
 
 Docker data images with Magento 2 source code and bi-directional file syncing.
 

@@ -1,2 +1,4 @@
 /composer.env
 /magento
+.idea
+.DS_Store
