@@ -24,15 +24,15 @@ services:
       - appdata
     env_file:
       - ./global.env
-    #environment:
-      #- VIRTUAL_HOST=magento2.docker
-      #- VIRTUAL_PORT=80
-      #- HTTPS_METHOD=noredirect
+#    environment:
+#      - VIRTUAL_HOST=magento2.docker
+#      - VIRTUAL_PORT=80
+#      - HTTPS_METHOD=noredirect
 
   fpm:
     hostname: fpm.magento2.docker
     build:
-      context: 7.0-fpm/
+      context: ${PHP_VERSION}-fpm/
     ports:
       - "9000"
     links:
@@ -58,7 +58,7 @@ services:
   cli:
     hostname: cli.magento2.docker
     build:
-      context: 7.0-cli/
+      context: ${PHP_VERSION}-cli/
     links:
       - db
     volumes:
@@ -75,7 +75,7 @@ services:
       - M2SETUP_DB_USER=magento2
       - M2SETUP_DB_PASSWORD=magento2
       - M2SETUP_BASE_URL=http://magento2.docker/
-      # - M2SETUP_SECURE_BASE_URL=https://magento2.docker/
+      - M2SETUP_SECURE_BASE_URL=https://magento2.docker/
       - M2SETUP_BACKEND_FRONTNAME=admin
       - M2SETUP_ADMIN_FIRSTNAME=Admin
       - M2SETUP_ADMIN_LASTNAME=User
@@ -83,11 +83,11 @@ services:
       - M2SETUP_ADMIN_USER=admin
       - M2SETUP_ADMIN_PASSWORD=password1
       - M2SETUP_VERSION=2.1.*
-      # - M2SETUP_USE_SAMPLE_DATA=true
+#      - M2SETUP_USE_SAMPLE_DATA=true
 
   cron:
     build:
-      context: 7.0-cli/
+      context: ${PHP_VERSION}-cli/
     hostname: magento2-cron.docker
     command: run-cron
     env_file:
