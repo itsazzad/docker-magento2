@@ -113,7 +113,7 @@ The source template for each target file is selected from the `src/` directory u
 Individual templates may include other templates as partials.
 
 
-### Web Browsing Usage
+# Web Browsing Usage
 Lists containers:
 
     docker ps
@@ -124,9 +124,7 @@ Output example:
 
     07387a659081        itsazzad-docker-magento2_web       "/usr/local/bin/dock…"   15 minutes ago      Up 6 minutes        0.0.0.0:32793->80/tcp, 0.0.0.0:32792->443/tcp   itsazzad-docker-magento2_web_1_6d400cbbcbbc
 
----
-- Way 1
----
+## Way 1
 Simplest way is to find the container ip address:
 
     docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <CONTAINER ID or NAME>
@@ -139,10 +137,7 @@ Set in the end set like as:
 
     <IPAddress> magento2.docker
     
----
-- Way 2
----
-
+## Way 2
 Check in the `Ports` column for ports mapping.
 
 Example:
