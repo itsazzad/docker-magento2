@@ -17,6 +17,7 @@ services:
       context: nginx/
     ports:
       - "80"
+      - "443"
     links:
       - fpm
       - db

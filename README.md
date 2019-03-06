@@ -122,7 +122,7 @@ Output example:
     
     CONTAINER ID        IMAGE                              COMMAND                  CREATED             STATUS              PORTS                                           NAMES
 
-    07387a659081        itsazzad-docker-magento2_web       "/usr/local/bin/dock…"   15 minutes ago      Up 6 minutes        0.0.0.0:32793->80/tcp   itsazzad-docker-magento2_web_1_6d400cbbcbbc
+    07387a659081        itsazzad-docker-magento2_web       "/usr/local/bin/dock…"   15 minutes ago      Up 6 minutes        0.0.0.0:32793->80/tcp, 0.0.0.0:32792->443/tcp   itsazzad-docker-magento2_web_1_6d400cbbcbbc
 
 ---
 - Way 1
@@ -147,8 +147,9 @@ Check in the `Ports` column for ports mapping.
 
 Example:
     
-    0.0.0.0:32793->80/tcp
+    0.0.0.0:32793->80/tcp, 0.0.0.0:32792->443/tcp
 
 In that case:
 
     docker-compose run --rm cli magento-command setup:store-config:set --base-url="http://magento2.docker:32783/"
+    docker-compose run --rm cli magento-command setup:store-config:set --base-url-secure="https://magento2.docker:32782/"
