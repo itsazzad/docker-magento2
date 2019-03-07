@@ -140,6 +140,10 @@ Set in the end set like as:
 
     <IPAddress> magento2.docker
     
+- http://magento2.docker
+
+- https://magento2.docker
+    
 ## Way 2
 Check in the `Ports` column for ports mapping.
 
@@ -151,3 +155,7 @@ In that case:
 
     docker-compose run --rm cli magento-command setup:store-config:set --base-url="http://magento2.docker:32783/"
     docker-compose run --rm cli magento-command setup:store-config:set --base-url-secure="https://magento2.docker:32782/"
+
+- http://magento2.docker:32783
+
+- https://magento2.docker:32782
