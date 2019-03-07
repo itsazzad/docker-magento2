@@ -16,6 +16,29 @@ A collection of Docker images for running Magento 2 through nginx and on the com
     docker-compose up -d
     docker-compose restart
 
+## Docker .env 
+Follow the following links  for choosing in between proper php and magento versions and Magento 2.x.x technology stack requirements:
+
+- M2.0.*  https://devdocs.magento.com/guides/v2.0/install-gde/system-requirements-tech.html#php
+- M2.1.*  https://devdocs.magento.com/guides/v2.1/install-gde/system-requirements-tech.html#php
+- M2.2.*  https://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html#php
+- M2.3.*  https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#php
+
+So some suitable .env settings can be as follows:
+
+    PHP_VERSION=7.0
+    MAGENTO_VERSION=2.0.*
+---
+    PHP_VERSION=7.1
+    MAGENTO_VERSION=2.1.*
+---
+    PHP_VERSION=7.1
+    MAGENTO_VERSION=2.2.*
+---
+    PHP_VERSION=7.2
+    MAGENTO_VERSION=2.3.*
+---
+
 ## Configuration
 
 Configuration is driven through environment variables.  A comprehensive list of the environment variables used can be found in each `Dockerfile` and the commands in each `bin/` directory.
@@ -159,3 +182,12 @@ In that case:
 - http://magento2.docker:32783
 
 - https://magento2.docker:32782
+
+
+## Troubleshoot
+- Reset application:
+
+
+    docker-compose down --volumes
+    rm -rf magento
+        

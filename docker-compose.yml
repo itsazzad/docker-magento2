@@ -84,7 +84,7 @@ services:
       - M2SETUP_ADMIN_USER=admin
       - M2SETUP_ADMIN_PASSWORD=password1
       - M2SETUP_VERSION=${MAGENTO_VERSION}
-#      - M2SETUP_USE_SAMPLE_DATA=true
+      - M2SETUP_USE_SAMPLE_DATA=true
 
   cron:
     build:
