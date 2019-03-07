@@ -2,3 +2,15 @@
 /magento
 .idea
 .DS_Store
+/logs
+.env
+/.project
+.docker-sync
+/jenkins/jenkins_home
+
+/logstash/pipeline/*.conf
+/logstash/config/pipelines.yml
+
+/nginx/ssl/*.crt
+/nginx/ssl/*.key
+/nginx/ssl/*.csr
