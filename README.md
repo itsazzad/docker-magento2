@@ -4,12 +4,9 @@ A collection of Docker images for running Magento 2 through nginx and on the com
 
 ## Quick Start
 
-    cp .env.sample .env
-    # ..you may want to change the default info into .env
-    
     cp composer.env.sample composer.env
     # ..put the correct tokens into composer.env
-
+---
     mkdir magento
 
     docker-compose run cli magento-installer
@@ -190,4 +187,4 @@ In that case:
 
     docker-compose down --volumes
     rm -rf magento
-        
+    rm -rf logs

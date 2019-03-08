@@ -11,6 +11,8 @@ services:
       - "80"
     links:
       - web
+    volumes:
+      - ./logs/varnish/:/var/log
 
   web:
     build:
@@ -21,6 +23,8 @@ services:
     links:
       - fpm
       - db
+    volumes:
+      - ./logs/nginx/:/var/log
     volumes_from:
       - appdata
     env_file:
@@ -34,10 +38,13 @@ services:
     hostname: fpm.magento2.docker
     build:
       context: ${PHP_VERSION}-fpm/
+    image: ${COMPOSE_PROJECT_NAME}-fpm:${PHP_VERSION}
     ports:
       - "9000"
     links:
       - db
+    volumes:
+      - ./logs/fpm/:/var/log
     volumes_from:
       - appdata
     env_file:
@@ -47,6 +54,8 @@ services:
     image: mariadb:10
     ports:
       - "3306"
+    volumes:
+      - ./logs/db/:/var/log
     volumes_from:
       - dbdata
     environment:
@@ -60,10 +69,12 @@ services:
     hostname: cli.magento2.docker
     build:
       context: ${PHP_VERSION}-cli/
+    image: ${COMPOSE_PROJECT_NAME}-cli:${PHP_VERSION}
     links:
       - db
     volumes:
       - ~/.composer/cache:/root/.composer/cache
+      - ./logs/cli/:/var/log
     volumes_from:
       - appdata
     env_file:
@@ -89,12 +100,15 @@ services:
   cron:
     build:
       context: ${PHP_VERSION}-cli/
+    image: ${COMPOSE_PROJECT_NAME}-cron:${PHP_VERSION}
     hostname: magento2-cron.docker
     command: run-cron
     env_file:
       - ./global.env    
     environment:
       - ENABLE_SENDMAIL=true
+    volumes:
+      - ./logs/cron/:/var/log
     volumes_from:
       - appdata
     links:
