@@ -4,8 +4,6 @@
 
 FROM php:7.1-fpm
 
-MAINTAINER Nick Jones <nick@nicksays.co.uk>
-
 # Install dependencies
 RUN apt-get update \
   && apt-get install -y \

@@ -4,7 +4,6 @@
 
 FROM <?php printf("php:%s-%s\n", $version, $flavour) ?>
 
-MAINTAINER Nick Jones <nick@nicksays.co.uk>
 <?php
     $packages = array_merge([
         'libfreetype6-dev',
