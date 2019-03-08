@@ -38,7 +38,7 @@ services:
     hostname: fpm.magento2.docker
     build:
       context: ${PHP_VERSION}-fpm/
-    image: ${COMPOSE_PROJECT_NAME}-fpm:${PHP_VERSION}
+    image: ${COMPOSE_PROJECT_NAME}/fpm:${PHP_VERSION}
     ports:
       - "9000"
     links:
@@ -69,7 +69,7 @@ services:
     hostname: cli.magento2.docker
     build:
       context: ${PHP_VERSION}-cli/
-    image: ${COMPOSE_PROJECT_NAME}-cli:${PHP_VERSION}
+    image: ${COMPOSE_PROJECT_NAME}/cli:${PHP_VERSION}
     links:
       - db
     volumes:
@@ -100,7 +100,7 @@ services:
   cron:
     build:
       context: ${PHP_VERSION}-cli/
-    image: ${COMPOSE_PROJECT_NAME}-cron:${PHP_VERSION}
+    image: ${COMPOSE_PROJECT_NAME}/cron:${PHP_VERSION}
     hostname: magento2-cron.docker
     command: run-cron
     env_file:
