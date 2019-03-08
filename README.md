@@ -150,7 +150,7 @@ Output example:
     
     CONTAINER ID        IMAGE                              COMMAND                  CREATED             STATUS              PORTS                                           NAMES
 
-    07387a659081        itsazzad-docker-magento2_web       "/usr/local/bin/dock…"   15 minutes ago      Up 6 minutes        0.0.0.0:32793->80/tcp, 0.0.0.0:32792->443/tcp   itsazzad-docker-magento2_web_1_6d400cbbcbbc
+    07387a659081        docker-magento2_web       "/usr/local/bin/dock…"   15 minutes ago      Up 6 minutes        0.0.0.0:32793->80/tcp, 0.0.0.0:32792->443/tcp   docker-magento2_web_1_6d400cbbcbbc
 
 ## Way 1
 Simplest way is to find the container ip address:
