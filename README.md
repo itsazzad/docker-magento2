@@ -9,7 +9,11 @@ A collection of Docker images for running Magento 2 through nginx and on the com
     
     cp composer.env.sample composer.env
     # ..put the correct tokens into composer.env
+
 ---
+Don't forget to update `.env` and `composer.env` files
+---
+
     mkdir magento
 
     docker-compose run cli magento-installer
@@ -24,7 +28,7 @@ Follow the following links  for choosing in between proper php and magento versi
 - M2.2.*  https://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html#php
 - M2.3.*  https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#php
 
-So some suitable .env settings can be as follows:
+So some suitable .env settings for `PHP_VERSION` and `MAGENTO_VERSION` can be as follows:
 
     PHP_VERSION=7.0
     MAGENTO_VERSION=2.0.*
