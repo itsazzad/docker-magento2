@@ -3,5 +3,6 @@
 .idea
 .DS_Store
 /logs
+.env
 /.project
 .docker-sync
