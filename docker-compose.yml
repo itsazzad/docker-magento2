@@ -24,7 +24,8 @@ services:
       - fpm
       - db
     volumes:
-      - ./logs/web/:/var/log
+      - ./logs/web/:/var/log/nginx
+#    command: [nginx-debug, '-g', 'daemon off;']
     volumes_from:
       - appdata
     env_file:
