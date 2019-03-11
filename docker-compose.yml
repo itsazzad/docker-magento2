@@ -24,7 +24,7 @@ services:
       - fpm
       - db
     volumes:
-      - ./logs/nginx/:/var/log
+      - ./logs/web/:/var/log
     volumes_from:
       - appdata
     env_file:
