@@ -11,7 +11,7 @@ RUN apt-get update \
     libicu-dev \ 
     libjpeg62-turbo-dev \ 
     libmcrypt-dev \ 
-    libpng-dev \ 
+    libpng-dev \
     libxslt1-dev \ 
     sendmail-bin \ 
     sendmail \ 
@@ -19,7 +19,10 @@ RUN apt-get update \
     cron \ 
     rsyslog \ 
     mysql-client \ 
-    git
+    git \
+    redis-tools \
+    nano \
+    unzip
 
 # Configure the gd library
 RUN docker-php-ext-configure \
@@ -35,7 +38,7 @@ RUN docker-php-ext-install \
   pdo_mysql \ 
   xsl \ 
   zip \ 
-  soap \ 
+  soap \
   bcmath
 
 # Install Xdebug (but don't enable)
