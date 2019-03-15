@@ -33,7 +33,10 @@
       "etc/php-cli.ini": {},
       "etc/php-xdebug.ini": {}
     },
-    "phpExtensions": ["mcrypt"],
+    "phpExtensions": [
+      "mcrypt",
+      "pcntl"
+    ],
     "xDebugVersion": "latest"
   },
   "7.0-fpm": {
@@ -49,7 +52,10 @@
       "etc/php-xdebug.ini": {},
       "etc/php-fpm.conf": {}
     },
-    "phpExtensions": ["mcrypt"],
+    "phpExtensions": [
+      "mcrypt",
+      "pcntl"
+    ],
     "xdebugVersion": "latest"
   },
   "7.1-cli": {
@@ -86,7 +92,10 @@
       "etc/php-cli.ini": {},
       "etc/php-xdebug.ini": {}
     },
-    "phpExtensions": ["mcrypt"],
+    "phpExtensions": [
+      "mcrypt",
+      "pcntl"
+    ],
     "xdebugVersion": "latest"
   },
   "7.1-fpm": {
@@ -102,7 +111,10 @@
       "etc/php-xdebug.ini": {},
       "etc/php-fpm.conf": {}
     },
-    "phpExtensions": ["mcrypt"],
+    "phpExtensions": [
+      "mcrypt",
+      "pcntl"
+    ],
     "xdebugVersion": "latest"
   },
   "7.2-cli": {
