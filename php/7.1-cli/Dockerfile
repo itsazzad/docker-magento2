@@ -41,6 +41,8 @@ RUN docker-php-ext-install \
   zip \ 
   soap \ 
   bcmath \ 
+  sockets \ 
+  opcache \ 
   mcrypt \ 
   pcntl
 
