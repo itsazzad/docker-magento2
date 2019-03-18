@@ -4,6 +4,7 @@
 
 FROM php:7.0-fpm
 
+
 # Install dependencies
 RUN apt-get update \
   && apt-get install -y \
@@ -33,7 +34,8 @@ RUN docker-php-ext-install \
   zip \ 
   soap \ 
   bcmath \ 
-  mcrypt
+  mcrypt \ 
+  pcntl
 
 # Install Xdebug (but don't enable)
 RUN pecl install -o -f xdebug

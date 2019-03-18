@@ -4,6 +4,7 @@
 
 FROM php:7.2-cli
 
+
 # Install dependencies
 RUN apt-get update \
   && apt-get install -y \
@@ -11,7 +12,7 @@ RUN apt-get update \
     libicu-dev \ 
     libjpeg62-turbo-dev \ 
     libmcrypt-dev \ 
-    libpng-dev \
+    libpng-dev \ 
     libxslt1-dev \ 
     sendmail-bin \ 
     sendmail \ 
@@ -19,9 +20,9 @@ RUN apt-get update \
     cron \ 
     rsyslog \ 
     mysql-client \ 
-    git \
-    redis-tools \
-    nano \
+    git \ 
+    redis-tools \ 
+    nano \ 
     unzip
 
 # Configure the gd library
@@ -38,10 +39,8 @@ RUN docker-php-ext-install \
   pdo_mysql \ 
   xsl \ 
   zip \ 
-  soap \
-  bcmath \
-  sockets \
-  opcache
+  soap \ 
+  bcmath
 
 # Install Xdebug (but don't enable)
 RUN pecl install -o -f xdebug
@@ -91,7 +90,5 @@ RUN ["chmod", "+x", "/usr/local/bin/magento-installer"]
 RUN ["chmod", "+x", "/usr/local/bin/magento-command"]
 RUN ["chmod", "+x", "/usr/local/bin/magerun2"]
 RUN ["chmod", "+x", "/usr/local/bin/run-cron"]
-
-WORKDIR ${MAGENTO_ROOT}
 
 CMD ["bash"]

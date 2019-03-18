@@ -4,6 +4,7 @@
 
 FROM php:7.1-cli
 
+
 # Install dependencies
 RUN apt-get update \
   && apt-get install -y \
@@ -19,7 +20,10 @@ RUN apt-get update \
     cron \ 
     rsyslog \ 
     mysql-client \ 
-    git
+    git \ 
+    redis-tools \ 
+    nano \ 
+    unzip
 
 # Configure the gd library
 RUN docker-php-ext-configure \
@@ -37,7 +41,8 @@ RUN docker-php-ext-install \
   zip \ 
   soap \ 
   bcmath \ 
-  mcrypt
+  mcrypt \ 
+  pcntl
 
 # Install Xdebug (but don't enable)
 RUN pecl install -o -f xdebug

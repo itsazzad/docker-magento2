@@ -11,7 +11,7 @@ class Builder2
 {
     const DEFAULT_CONFIG_FILE = __DIR__ . DIRECTORY_SEPARATOR . "config.json";
     const DEFAULT_TEMPLATE_DIR = __DIR__ . DIRECTORY_SEPARATOR . "src/";
-    const DEFAULT_DESTINATION_DIR = __DIR__;
+    const DEFAULT_DESTINATION_DIR = __DIR__ . DIRECTORY_SEPARATOR . "php/";
     const DEFAULT_EXECUTABLE_PERMISSIONS = 0755;
     const DEFAULT_VERBOSE_LEVEL = 1;
     
