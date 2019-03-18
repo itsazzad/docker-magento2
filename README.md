@@ -1,3 +1,5 @@
+[![Build Status][ico-travis]][link-travis]
+
 # Magento 2 Docker
 
 A collection of Docker images for running Magento 2 through nginx and on the command line.
@@ -193,3 +195,7 @@ In that case:
     docker-compose down --volumes --rmi all
     rm -rf magento
     rm -rf logs
+
+
+[ico-travis]: https://img.shields.io/travis/itsazzad/docker-magento2.svg?style=flat-square
+[link-travis]: https://travis-ci.org/itsazzad/docker-magento2
