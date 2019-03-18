@@ -47,7 +47,7 @@ docker pull meanbee/magento2-php:${PHP_VERSION}-${IMAGE_FLAVOUR}
 echo ""
 echo "Building image"
 echo ""
-docker build --tag $IMAGE_NAME ${PHP_VERSION}-${IMAGE_FLAVOUR}/
+docker build --tag $IMAGE_NAME php/${PHP_VERSION}-${IMAGE_FLAVOUR}/
 
 ################################################################################
 # Output the PHP version running in the image
