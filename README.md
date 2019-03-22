@@ -192,9 +192,9 @@ In that case:
 - Reset application:
 
 
-    docker-compose down --volumes --rmi all
-    rm -rf magento
     rm -rf logs
+    rm -rf magento
+    docker-compose down --volumes --rmi all
 
 
 [ico-travis]: https://img.shields.io/travis/itsazzad/docker-magento2.svg?style=flat-square
