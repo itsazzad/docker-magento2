@@ -184,7 +184,6 @@ In that case:
     docker-compose run --rm cli magento-command setup:store-config:set --base-url-secure="https://magento2.docker:32782/"
 
 - http://magento2.docker:32783
-
 - https://magento2.docker:32782
 
 
