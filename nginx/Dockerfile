@@ -1,10 +1,10 @@
 FROM nginx:1.9
 
-ADD etc/vhost.conf /etc/nginx/conf.d/default.conf
+COPY etc/vhost.conf /etc/nginx/conf.d/default.conf
 COPY etc/certs/ /etc/nginx/ssl/
-ADD bin/* /usr/local/bin/
+COPY bin/* /usr/local/bin/
 
-EXPOSE 443
+EXPOSE 80 443
 
 ENV UPLOAD_MAX_FILESIZE 64M
 ENV FPM_HOST fpm

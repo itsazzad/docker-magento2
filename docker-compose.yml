@@ -92,7 +92,7 @@ services:
       - M2SETUP_BACKEND_FRONTNAME=admin
       - M2SETUP_ADMIN_FIRSTNAME=Admin
       - M2SETUP_ADMIN_LASTNAME=User
-      - M2SETUP_ADMIN_EMAIL=devteam@harriswebworks.com
+      - M2SETUP_ADMIN_EMAIL=itsazzad@gmail.com
       - M2SETUP_ADMIN_USER=admin
       - M2SETUP_ADMIN_PASSWORD=password1
       - M2SETUP_VERSION=${MAGENTO_VERSION}
